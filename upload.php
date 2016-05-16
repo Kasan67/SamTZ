@@ -1,16 +1,24 @@
 <?php
-//if($_POST['submit']){
-//    $name = $_FILES['upload']['myfile'];
-//    $temp = $_FILES['upload']['tmp_name'];
-//    $type = $_FILES['upload']['type'];
-//    $size = $_FILES['upload']['size'];
-//
-//}
-//var_dump($_FILES);
-//var_dump($_POST);
-//echo " $name <br> $temp <br> $type <br> $size ";
-//
+if($_POST['submit']){
+    $name = $_FILES['upload']['myfile'];
+    $temp = $_FILES['upload']['tmp_name'];
+    $type = $_FILES['upload']['type'];
+    $size = $_FILES['upload']['size'];
 
+}
+
+echo "$name <hr> $temp <hr> $type <hr> $size";
+$targetDir = $_SERVER['DOCUMENT_ROOT'];
+if(is_array($_FILES)) 
+{
+    if(is_uploaded_file($_FILES['myfile']['tmp_name'])) 
+    {
+        if(move_uploaded_file($_FILES['myfile']['tmp_name'],"$targetDir/".$_FILES['myfile']['name']))
+        {
+            echo "File uploaded successfully";
+        }
+    }
+}
 
 
 

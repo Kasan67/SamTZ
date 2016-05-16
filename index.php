@@ -26,7 +26,7 @@ session_start();
     </head>
 
     <body>
-        <img alt="Brand" class="head" src="oso_guestbook-header.jpg">
+<!--        <img alt="Brand" class="head" src="/forsam/img/oso_guestbook-header.jpg">-->
         <div class="container-fluid">
             <div class="row textrow">
                 <div class="col-md-9">
@@ -82,7 +82,7 @@ session_start();
                     <div class="row">
                         <div class="col-md-12">
                             <ul class="pagination pagination-lg ">
-                                <?php  //////////////////////////////////ПЕРЕДЕЛАТЬ В ООП ВИД.....
+                                <?php  
                         $q= mysqli_query($link,"SELECT count(id) FROM guestBook");
                         $numberposts = mysqli_fetch_row($q);
                         $page_count = $numberposts[0]/$popage;
@@ -96,7 +96,7 @@ session_start();
                 <div class="col-md-3">
 
                     <form id="form" method="post" enctype="multipart/form-data">
-<!--
+
                         <p>User Name:*</p>
                         <p>
                             <input type="text" id="name" name="userName" class="name form-control" value="" required/>
@@ -113,7 +113,7 @@ session_start();
                         <p>
                             <textarea id="message" class="message form-control" name="text" required></textarea>
                         </p>
--->
+
                         <p>Download image</p>
                         <p>
                            
@@ -141,7 +141,6 @@ session_start();
                 </div>
             </div>
         </div>
-<!--        <script src="js/imageupload.js"></script>-->
         <script src="ajax.js"></script>
     </body>
 
