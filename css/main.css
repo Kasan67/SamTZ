@@ -1,4 +1,13 @@
+.background{
+    background-image: url(../img/layout2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.logo{
+    background-image: url(../img/Guest-Book.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .head{
-    width: 100%;
-    margin-bottom: 20px;
+    height: 350px;
 }

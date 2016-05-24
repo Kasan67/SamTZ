@@ -1,6 +1,6 @@
 <?php
-include_once "db.php";
-$db = db::getInstance();
+include_once "Db.php";
+$db = Db::getInstance();
 $link = $db->getConnect();
 $userName = addslashes($_POST['userName']);
 $email = addslashes($_POST['email']);
@@ -12,7 +12,7 @@ $sqlInsert = "INSERT INTO guestBook (userName, email, url, text) VALUE ('$userNa
 $result = $link->query($sql);
 $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
 if(isset($row[0]['email'])){
-    echo "<div class=\"alert alert-info\">Вы уже оставляли сообщение на данном портале.</div>";
+    echo "<div class=\"alert alert-info\"> Вы уже оставляли сообщение на данном портале.</div>".$_SERVER['DOCUMENT_ROOT'] ;
 }else{
     if(!empty($_POST['userName']) && !empty($_POST['text'])){
         $result = $link->query($sqlInsert);
@@ -21,5 +21,3 @@ if(isset($row[0]['email'])){
         echo "<div class=\"alert alert-info\">Заполните обязательные поля.</div>";
     }
 }
-
-//отключить теги в полях
