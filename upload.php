@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             return $file['name'];
             
         }else{
-            imagejpeg($src, $tmp_path . $file['name'], $quality);
+            imagejpeg($source, $tmp_path . $file['name'], $quality);
             imagedestroy($source);
             return $file['name'];
         }
